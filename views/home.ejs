@@ -1,0 +1,18 @@
+<%- include("partials/header"); -%> 
+    <h1>Home</h1>
+    <p><%= startingContent %></p>
+    <hr>
+    <% days.slice().reverse().forEach(function(element) { %>
+        <h2><%= element.date %></h2>
+        <p>
+            <%= "AM Mileage: " + element.am%>
+        </p>
+        <p>
+            <%= "PM Mileage: " + element.pm%>
+        </p>
+        <p>
+            <%= "Reflection: " + element.reflection.substring(0, 100) + "..." %>
+            <a href="/days/<%= element.date %>" >Read More</a>
+        </p>
+    <% }) %>
+<%- include("partials/footer"); -%> 
